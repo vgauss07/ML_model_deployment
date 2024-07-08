@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/
+    bootstrap/3.3.7/css/bootstrap.min.css" integrity="
+    sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <title>Score Prediction</title>
+    </head>
+
+    <body>
+        <h1><div style="text-align:center"><font color ='blue'>Assessment Score
+        Prediction</font></div></h1>
+        <hr>
+        </br>
+
+        <h2><div style="text-align:center">Enter the values</div></h2>
+        </br>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col-6'>
+                    <form method="POST" action="/predict">
+                        <div class ='form-group'>
+                            <label for="variable_1"><p class="font-weight-bold">
+                            Hours Studied</p></label>
+                            <input type='text' name="variable_1">
+                        </div>
+                        <div class='form-group'>
+                            <label for="variable_2"></label><p class="font-weight-bold">
+                            Previous Scores</p></label>
+                            <input type='text' name="variable_2">
+                        </div>
+                        <div class='form-group'>
+                            <label for="variable_3"></label><p class="font-weight-bold">
+                            Extracurricular Activities</p></label>
+                            <input type='text' name="variable_3">
+                        </div>
+                        <div class='form-group'>
+                            <label for="variable_4"></label><p class="font-weight-bold">
+                            Sleep Hours</p></label>
+                            <input type='text' name="variable_4">
+                        </div>
+                        <div class='form-group'>
+                            <label for="variable_5"></label><p class="font-weight-bold">
+                            Sample Question Papers Practiced</p></label>
+                            <input type='text' name="variable_5">
+                        </div>
+                        </div>
+                        <input class='btn btn-primary' type='submit' value='Submit'>
+                    </form>
+                        
+            </div>
+            </div>
+            </div>
+    </body>
+</html>
