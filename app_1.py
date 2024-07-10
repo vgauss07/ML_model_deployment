@@ -12,7 +12,7 @@ def lr_prediction(variable_1, variable_2, variable_3, variable_4, variable_5):
     pred_arr = np.array([variable_1, variable_2, variable_3, variable_4, variable_5])
     preds = pred_arr.reshape(1,-1)
     preds = preds.astype(int)
-    model_prediction = lr_model.prediction(preds)
+    model_prediction = lr_model.predict(preds)
     return model_prediction
 
 def run():
@@ -21,9 +21,10 @@ def run():
     
     """
     streamlit.markdown(html_temp)
+    
     variable_1 = streamlit.text_input('Hours Studied')
     variable_2 = streamlit.text_input('Previous Scores')
-    variable_3 = streamlit.text_input('Extracurricular Activities')
+    variable_3 = streamlit.text_input('Extracurricular Activities:  1 - Yes, 0 - No')
     variable_4 = streamlit.text_input('Sleep Hours')
     variable_5 = streamlit.text_input('Sample Question Papers Practiced')
 
@@ -32,8 +33,11 @@ def run():
     if streamlit.button("Predict"):
         prediction = lr_prediction(variable_1, variable_2, variable_3, 
                     variable_4, variable_5)
-    streamlit.success(f'The prediction by model: {prediction}')
+        if prediction > 100:
+            streamlit.error('This is an error', icon="🚨")
+        else:
+            streamlit.success(f'The predicted score: {prediction}')
 
-    if __name__ == '__main__':
-        run()
+if __name__ == '__main__':
+    run()
 
